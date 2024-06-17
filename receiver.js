@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 
 const app = express();
 const port = 3000;
-const token ="EAAMUg0ND9nQBO3eAPN9IFQjFCD9hnv9HZBDZBCHqOFt3KZCgyZBF5l8nEB237SLBe6tOJemJ8Dityv8Koei5pvePGGKRPNqVYrzWotRHZAZCmzQnGtgLJyxPFfarj77k8LVM7JzhC5Nxov6fNBBwxQweTfywEQuZBcLFuBOLnNZCL3BDir8VX6OT6uNzjXr7AQzZCosaVX8kZA132TsJB0cm4ThjiIaogZD"
+const token ="EAAMUg0ND9nQBOyhbd6hv9V0Nn9py5OpDwMAixajGP3U9gbtvCKf6BkglxMzkJZAaDeSxPBnrOD1dgbgCj844EhHsCzyHHEIYspGHrZBlLmm1rK0ayESZB2eIKGAGbnwJOHTesdIZACAO6TGtFefFvea8tHPzs3Em2e3WTAxtW1XBDZCcW5aHqCEs0KZAACESGe"
 const mytoken="harsh"
 
 app.use(bodyParser.json());
@@ -14,21 +14,21 @@ app.get('/webhook-receive', (req, res) => {
 
     // // Respond with a 200 status to acknowledge receipt of the event
     // res.status(200).send('Webhook received');
-    let mode=req.query["hub.mode"];
-    let challange=req.query["hub.challenge"];
-    let token=req.query["hub.verify_token"];
+    // let mode=req.query["hub.mode"];
+    // let challange=req.query["hub.challenge"];
+    // let token=req.query["hub.verify_token"];
  
  
-     if(mode && token){
+    //  if(mode && token){
  
-         if(mode==="subscribe" && token===mytoken){
-             res.status(200).send(challange);
-         }else{
-             res.status(403);
-         }
+    //      if(mode==="subscribe" && token===mytoken){
+    //          res.status(200).send(challange);
+    //      }else{
+    //          res.status(403);
+    //      }
  
-     }
- 
+    //  }
+ res.json("hey")
 });
 app.post('/webhook-receive',(req,res)=>{
     let body_param=req.body;

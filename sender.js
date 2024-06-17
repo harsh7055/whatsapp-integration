@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 const sendWebhook = async () => {
-    const webhookUrl = 'https://13.233.251.10:3000/webhook-receive'; // URL of the receiving webhook
+    const webhookUrl = 'http://13.233.251.10:3000/webhook-receive'; // URL of the receiving webhook
     const data = {
         message: 'Hello, this is a webhook event!'
     };
